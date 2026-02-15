@@ -19,6 +19,7 @@ modules:
       - distrobox
       - zsh
       - btop
+      - plymouth-theme-spinner # O tema limpo
       # Codecs para o notebook antigo rodar vídeos bem
       #- ffmpeg
       #- gstreamer1-plugin-libav
@@ -63,5 +64,7 @@ modules:
           - io.gitlab.librewolf-community
           - org.kde.ark # Essencial para abrir zips no Dolphin
           - it.mijorus.gearlever
+          - io.github.kolunmi.Bazaar
+          - org.kde.gwenview
 
   - type: signing

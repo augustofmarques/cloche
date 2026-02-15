@@ -4,6 +4,8 @@ ID=gnx
 ID_LIKE="rhel fedora"
 VERSION_ID=43
 PRETTY_NAME="GNX Workstation (Powered by Aurora)"
+VARIANT="Workstation Edition"
+VARIANT_ID=workstation
 ANSI_COLOR="0;34"
 CPE_NAME="cpe:/o:gnx:workstation:43"
 HOME_URL="https://github.com/augustofmarques/gnx"
@@ -12,4 +14,4 @@ SUPPORT_URL="https://github.com/augustofmarques/gnx"
 
 # Mantendo compatibilidade com ferramentas do BlueBuild/Fedora
 # OSTREE_VERSION='43.20260214.0'
-DEFAULT_HOSTNAME="gnx-workstation"
+DEFAULT_HOSTNAME="Gnx"

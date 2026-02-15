@@ -1,0 +1,42 @@
+name: gnx-deck
+description: Steam Deck Bazzite Mod
+base-image: ghcr.io/ublue-os/bazzite-deck
+image-version: stable
+
+modules:
+  # Descomente se os arquivos existirem
+  #- type: files
+  #  files:
+  #    - source: system
+  #      destination: /
+
+  - type: rpm-ostree
+    install:
+      - git
+      - distrobox
+      - zsh
+      - btop
+
+    remove:
+      - waydroid # Aqui PODE remover, pq Bazzite tem Waydroid.
+
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.socket
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - dev.zed.Zed
+          - org.blender.Blender
+          - io.gitlab.librewolf-community
+
+  # No Deck, deixamos o tema do Bazzite que é bonito,
+  # ou usa o spinner se quiser padronizar.
+  #- type: plymouth
+  #  packagename: plymouth-theme-spinner
+
+  - type: signing

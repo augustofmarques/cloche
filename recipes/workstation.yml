@@ -7,7 +7,9 @@ modules:
   # Descomente ISSO se o comando 'ls' mostrou os arquivos lá na pasta
   - type: files
     files:
-      - source: system
+      - source: common # <--- Mudou de 'system' para 'common'
+        destination: /
+      - source: workstation # <--- Pega o branding GNX
         destination: /
 
   - type: rpm-ostree

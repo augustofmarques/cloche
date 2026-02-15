@@ -17,10 +17,10 @@ modules:
       - zsh
       - btop
 
-    remove:
-      - waydroid
-      - waydroid-selinux # <--- Adicione isso!
-      - waydroid-dl-libgbinder # Aqui PODE remover, pq Bazzite tem Waydroid.
+    #remove:
+    #  - waydroid
+    #  - waydroid-selinux # <--- Adicione isso!
+    #  - waydroid-dl-libgbinder # Aqui PODE remover, pq Bazzite tem Waydroid.
 
   - type: systemd
     system:

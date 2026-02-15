@@ -1,6 +1,6 @@
 name: gnx-workstation
-description: Workstation Leve (Base Kinoite)
-base-image: ghcr.io/ublue-os/kinoite-main
+description: Workstation
+base-image: ghcr.io/blue-build/base-images/fedora-kinoite
 image-version: main # Kinoite usa numeros (Fedora 41)
 
 modules:

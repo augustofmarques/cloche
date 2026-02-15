@@ -1,43 +1,24 @@
-# recipes/recipe.yml
-
 name: gnx
-description: Universal Blue/Bazzite based image.
+description: Minha imagem baseada no Bazzite
 base-image: ghcr.io/ublue-os/bazzite
-image-version: stable # ou 'latest'
-
-# Aqui você escolhe a base exata.
-# Para ter o PLASMA no Desktop e Deck:
-base-image: ghcr.io/ublue-os/bazzite
-# Se fosse só notebook GNOME, seria 'silverblue' ou 'bluefin'
+image-version: stable
 
 modules:
   - type: files
     files:
-      - usr: /usr # Copia arquivos customizados se você tiver
+      - usr: /usr
 
   - type: rpm-ostree
     repos:
-      # Exemplo: Adicionar repo do VSCode ou Sublime se precisasse
-      # - https://packages.microsoft.com/yumrepos/vscode/config.repo
+      # Repositorio do VSCode
+      - https://packages.microsoft.com/yumrepos/vscode/config.repo
     install:
-      # --- Suas Ferramentas de Dev ---
+      # Ferramentas de Dev e Sistema
       - git
-      - code # VSCode
+      - code
       - distrobox
-      # - godot (Geralmente é melhor instalar via Flatpak, mas pode ser via RPM)
-
-      # --- Ferramentas de Sistema ---
       - zsh
       - htop
-
-  - type: default-flatpaks
-    notify: true # Mostra notificação no primeiro boot
-    system:
-      # Instala automaticamente esses flatpaks
-      - repo: flathub
-        name: org.godotengine.Godot
-      - repo: flathub
-        name: org.blender.Blender
+      # Adicione outros pacotes do sistema aqui se precisar
 
   - type: signing
-    # Isso assina a imagem (importante para segurança)

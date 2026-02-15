@@ -1,45 +1,43 @@
----
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
-name: template
-# description will be included in the image's metadata
-description: This is my personal OS image.
+# recipes/recipe.yml
 
-# the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+name: gnx
+description: Universal Blue/Bazzite based image.
+base-image: ghcr.io/ublue-os/bazzite
+image-version: stable # ou 'latest'
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
+# Aqui você escolhe a base exata.
+# Para ter o PLASMA no Desktop e Deck:
+base-image: ghcr.io/ublue-os/bazzite
+# Se fosse só notebook GNOME, seria 'silverblue' ou 'bluefin'
+
 modules:
   - type: files
     files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+      - usr: /usr # Copia arquivos customizados se você tiver
 
-  - type: dnf
+  - type: rpm-ostree
     repos:
-      copr:
-        - atim/starship
+      # Exemplo: Adicionar repo do VSCode ou Sublime se precisasse
+      # - https://packages.microsoft.com/yumrepos/vscode/config.repo
     install:
-      packages:
-        - micro
-        - starship
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      # --- Suas Ferramentas de Dev ---
+      - git
+      - code # VSCode
+      - distrobox
+      # - godot (Geralmente é melhor instalar via Flatpak, mas pode ser via RPM)
+
+      # --- Ferramentas de Sistema ---
+      - zsh
+      - htop
 
   - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+    notify: true # Mostra notificação no primeiro boot
+    system:
+      # Instala automaticamente esses flatpaks
+      - repo: flathub
+        name: org.godotengine.Godot
+      - repo: flathub
+        name: org.blender.Blender
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
+    # Isso assina a imagem (importante para segurança)

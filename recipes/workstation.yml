@@ -5,10 +5,10 @@ image-version: main # Kinoite usa numeros (Fedora 41)
 
 modules:
   # Descomente ISSO se o comando 'ls' mostrou os arquivos lá na pasta
-  #- type: files
-  #  files:
-  #    - source: system
-  #      destination: /
+  - type: files
+    files:
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     install:
@@ -40,9 +40,5 @@ modules:
           - dev.zed.Zed
           - io.gitlab.librewolf-community
           - org.kde.ark # Essencial para abrir zips no Dolphin
-
-  # Muda o logo de boot para um spinner simples, sem logo do Fedora
-  - type: plymouth
-    packagename: plymouth-theme-spinner
 
   - type: signing

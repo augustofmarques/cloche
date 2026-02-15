@@ -5,10 +5,10 @@ image-version: stable
 
 modules:
   # Descomente se os arquivos existirem
-  #- type: files
-  #  files:
-  #    - source: system
-  #      destination: /
+  - type: files
+    files:
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     install:
@@ -18,7 +18,9 @@ modules:
       - btop
 
     remove:
-      - waydroid # Aqui PODE remover, pq Bazzite tem Waydroid.
+      - waydroid
+      - waydroid-selinux # <--- Adicione isso!
+      - waydroid-dl-libgbinder # Aqui PODE remover, pq Bazzite tem Waydroid.
 
   - type: systemd
     system:

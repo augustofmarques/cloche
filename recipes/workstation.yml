@@ -1,7 +1,7 @@
 name: gnx-workstation
 description: Workstation
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: main # Kinoite usa numeros (Fedora 41)
+image-version: latest # Kinoite usa numeros (Fedora 41)
 
 modules:
   # Descomente ISSO se o comando 'ls' mostrou os arquivos lá na pasta

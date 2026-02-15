@@ -1,6 +1,6 @@
 # recipes/recipe.yml
 name: gnx
-description: Minha imagem Dev com Zed e Plasma
+description: Universal Blue/Bazzite based image
 base-image: ghcr.io/ublue-os/bazzite # Garante o Plasma e suporte a jogos
 image-version: stable
 
@@ -21,7 +21,7 @@ modules:
       - git
       - distrobox
       - zsh
-      - htop
+      - btop
       # - code (descomente se quiser o VSCode também)
 
   # --- Flatpaks (Onde entra o Zed) ---
@@ -33,9 +33,9 @@ modules:
           # O ZED entra aqui:
           - dev.zed.Zed
           # Outros apps úteis:
-          - org.godotengine.Godot
+          #- org.godotengine.Godot
           - org.blender.Blender
-          - com.discordapp.Discord
+          #- com.discordapp.Discord
 
   # --- Assinatura (Segurança) ---
   - type: signing

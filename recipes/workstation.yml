@@ -29,10 +29,28 @@ modules:
       # Removi 'waydroid' daqui pois Kinoite NAO tem waydroid, ia dar erro.
       - htop
 
+  # 1. Otimizações do Kernel (Boot Rápido)
+  - type: kargs
+    args:
+      - nowatchdog # Desliga checagem de travamento (ganha tempo)
+      - modprobe.blacklist=iTCO_wdt # Desliga driver de watchdog Intel desnecessário
+      - random.trust_cpu=on # Acelera a criptografia inicial
+      - console=tty0 # Foca no console principal, ignora seriais
+      - quiet # Menos texto na tela
+      - splash # Garante a animação (se tiver plymouth)
+
   - type: systemd
     system:
       enabled:
         - cockpit.socket
+      masked:
+        # A Tríade da Espera (Mata o delay de rede)
+        - NetworkManager-wait-online.service
+        - plymouth-quit-wait.service
+        - gssproxy.service
+        - rpc-gssd.service
+        # Se você não usa modem 3G/4G no note, mate esse também:
+        #- ModemManager.service
 
   - type: default-flatpaks
     configurations:

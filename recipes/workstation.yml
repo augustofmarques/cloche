@@ -31,7 +31,7 @@ modules:
 
   # 1. Otimizações do Kernel (Boot Rápido)
   - type: kargs
-    args:
+    kargs:
       - nowatchdog # Desliga checagem de travamento (ganha tempo)
       - modprobe.blacklist=iTCO_wdt # Desliga driver de watchdog Intel desnecessário
       - random.trust_cpu=on # Acelera a criptografia inicial

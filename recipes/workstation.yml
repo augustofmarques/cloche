@@ -23,10 +23,10 @@ modules:
       - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-ugly-free
 
-    remove:
-      - firefox # Removemos o firefox padrao pra usar o flatpak/librewolf
-      - firefox-langpacks
-      # Removi 'waydroid' daqui pois Kinoite NAO tem waydroid, ia dar erro.
+    #remove:
+    #- firefox # Removemos o firefox padrao pra usar o flatpak/librewolf
+    #- firefox-langpacks
+    # Removi 'waydroid' daqui pois Kinoite NAO tem waydroid, ia dar erro.
 
   - type: systemd
     system:

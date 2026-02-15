@@ -1,6 +1,6 @@
 name: gnx-workstation
 description: Workstation
-base-image: ghcr.io/ublue-os/aurora
+base-image: ghcr.io/ublue-os/aurora-hwe
 image-version: stable # Kinoite usa numeros (Fedora 41)
 
 modules:

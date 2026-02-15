@@ -36,6 +36,7 @@ modules:
           - dev.zed.Zed
           - org.blender.Blender
           - io.gitlab.librewolf-community
+          - it.mijorus.gearlever
 
   # No Deck, deixamos o tema do Bazzite que é bonito,
   # ou usa o spinner se quiser padronizar.

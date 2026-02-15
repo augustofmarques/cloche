@@ -1,24 +1,41 @@
+# recipes/recipe.yml
 name: gnx
-description: Minha imagem baseada no Bazzite
-base-image: ghcr.io/ublue-os/bazzite
+description: Minha imagem Dev com Zed e Plasma
+base-image: ghcr.io/ublue-os/bazzite # Garante o Plasma e suporte a jogos
 image-version: stable
 
 modules:
-  - type: files
-    files:
-      - usr: /usr
+  # --- IMPORTANTE: Comentei a parte de arquivos para não dar erro ---
+  # Se você não criou a pasta "files/system" no seu repo, isso quebrava o build.
+  # - type: files
+  #   files:
+  #     - source: system
+  #       destination: /
 
+  # --- Pacotes do Sistema (RPM) ---
   - type: rpm-ostree
     repos:
-      # Repositorio do VSCode
+      # Se quiser o VSCode nativo (opcional, já que você usa Zed):
       - https://packages.microsoft.com/yumrepos/vscode/config.repo
     install:
-      # Ferramentas de Dev e Sistema
       - git
-      - code
       - distrobox
       - zsh
       - htop
-      # Adicione outros pacotes do sistema aqui se precisar
+      # - code (descomente se quiser o VSCode também)
 
+  # --- Flatpaks (Onde entra o Zed) ---
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Avisa quando terminar de instalar
+        scope: system # Instala para todo o sistema
+        install:
+          # O ZED entra aqui:
+          - dev.zed.Zed
+          # Outros apps úteis:
+          - org.godotengine.Godot
+          - org.blender.Blender
+          - com.discordapp.Discord
+
+  # --- Assinatura (Segurança) ---
   - type: signing

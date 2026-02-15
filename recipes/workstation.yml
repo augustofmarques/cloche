@@ -18,10 +18,10 @@ modules:
       - zsh
       - btop
       # Codecs para o notebook antigo rodar vídeos bem
-      - ffmpeg
-      - gstreamer1-plugin-libav
-      - gstreamer1-plugins-bad-free-extras
-      - gstreamer1-plugins-ugly-free
+      #- ffmpeg
+      #- gstreamer1-plugin-libav
+      # gstreamer1-plugins-bad-free-extras
+      #- gstreamer1-plugins-ugly-free
 
     #remove:
     #- firefox # Removemos o firefox padrao pra usar o flatpak/librewolf

@@ -21,6 +21,15 @@ modules:
       - zsh
       - btop
       # Não precisa de ffmpeg/gstreamer aqui
+      #
+  - type: kargs
+    kargs:
+      - quiet # Cala a boca do Kernel
+      - splash # Mostra a tela de carregamento (Plymouth)
+      - rhgb # Red Hat Graphical Boot (essencial para o spinner)
+      - rd.udev.log_priority=3 # Esconde logs de hardware (systemd-udev)
+      - vt.global_cursor_default=0 # Esconde o cursor piscando no canto
+      - systemd.show_status=auto # Só mostra texto se algo der erro crítico
 
   - type: default-flatpaks
     configurations:

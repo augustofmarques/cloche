@@ -16,6 +16,8 @@ jobs:
       # --- ISO 1: WORKSTATION (AURORA) ---
       - name: Build Workstation ISO
         uses: blue-build/github-action@v1.8
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
           recipe: recipes/workstation.yml
           iso_name: gnx-workstation.iso
@@ -25,6 +27,8 @@ jobs:
       # --- ISO 2: DECK ---
       - name: Build Deck ISO
         uses: blue-build/github-action@v1.8
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
           recipe: recipes/deck.yml
           iso_name: gnx-deck.iso
@@ -34,6 +38,8 @@ jobs:
       # --- ISO 3: WORKSTATION XE (BAZZITE) ---
       - name: Build Workstation XE ISO
         uses: blue-build/github-action@v1.8
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
           recipe: recipes/workstation-xe.yml
           iso_name: gnx-workstation-xe.iso

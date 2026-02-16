@@ -68,7 +68,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=preferred://filemanager,applications:io.gitlab.librewolf-community.desktop
+launchers=preferred://filemanager,applications:systemsettings.desktop,applications:org.mozilla.firefox.desktop
 
 [Containments][2][Applets][6]
 immutability=1

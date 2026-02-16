@@ -9,6 +9,8 @@ modules:
     files:
       - source: common
         destination: /
+      - source: deck # <--- ESSA LINHA EXISTE?
+        destination: /
 
   - type: rpm-ostree
     install:

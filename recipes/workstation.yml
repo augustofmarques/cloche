@@ -20,7 +20,6 @@ modules:
       - zsh
       - btop
       - plymouth-theme-spinner # O tema limpo
-      - io.bassi.Amberol
       # Codecs para o notebook antigo rodar vídeos bem
       #- ffmpeg
       #- gstreamer1-plugin-libav

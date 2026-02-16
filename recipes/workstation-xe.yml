@@ -1,59 +1,26 @@
-name: gnx-workstation
-description: Workstation
-base-image: ghcr.io/ublue-os/aurora
-image-version: latest # Kinoite usa numeros (Fedora 41)
+name: gnx-workstation-xe
+description: Workstation High-End (Base Bazzite)
+base-image: ghcr.io/ublue-os/bazzite # Use 'bazzite-nvidia' se tiver placa verde!
+image-version: stable # Bazzite usa 'stable' (segue o Fedora atual)
 
 modules:
-  # Descomente ISSO se o comando 'ls' mostrou os arquivos lá na pasta
   - type: files
     files:
-      - source: common # <--- Mudou de 'system' para 'common'
+      - source: common # Pega Wallpaper, Fontes, Plasma Configs
         destination: /
-      - source: workstation # <--- Pega o branding GNX
+      - source: workstation-xe # Pega o nome "GNX XE"
         destination: /
 
   - type: rpm-ostree
     install:
+      # Bazzite JA VEM com codecs, drivers, lutris, steam, etc.
+      # Só instale o que falta pra trabalho.
       - cockpit
       - git
       - distrobox
       - zsh
       - btop
-      - plymouth-theme-spinner # O tema limpo
-      # Codecs para o notebook antigo rodar vídeos bem
-      #- ffmpeg
-      #- gstreamer1-plugin-libav
-      # gstreamer1-plugins-bad-free-extras
-      #- gstreamer1-plugins-ugly-free
-
-    remove:
-      #- firefox # Removemos o firefox padrao pra usar o flatpak/librewolf
-      #- firefox-langpacks
-      # Removi 'waydroid' daqui pois Kinoite NAO tem waydroid, ia dar erro.
-      - htop
-
-  # 1. Otimizações do Kernel (Boot Rápido)
-  - type: kargs
-    kargs:
-      - nowatchdog # Desliga checagem de travamento (ganha tempo)
-      - modprobe.blacklist=iTCO_wdt # Desliga driver de watchdog Intel desnecessário
-      - random.trust_cpu=on # Acelera a criptografia inicial
-      - console=tty0 # Foca no console principal, ignora seriais
-      - quiet # Menos texto na tela
-      - splash # Garante a animação (se tiver plymouth)
-
-  - type: systemd
-    system:
-      enabled:
-        - cockpit.socket
-      masked:
-        # A Tríade da Espera (Mata o delay de rede)
-        - NetworkManager-wait-online.service
-        - plymouth-quit-wait.service
-        - gssproxy.service
-        - rpc-gssd.service
-        # Se você não usa modem 3G/4G no note, mate esse também:
-        #- ModemManager.service
+      # Não precisa de ffmpeg/gstreamer aqui
 
   - type: default-flatpaks
     configurations:
@@ -62,9 +29,16 @@ modules:
         install:
           - dev.zed.Zed
           - io.gitlab.librewolf-community
-          - org.kde.ark # Essencial para abrir zips no Dolphin
-          - it.mijorus.gearlever
-          - io.github.kolunmi.Bazaar
-          - org.kde.gwenview
+          - org.kde.ark
+          - io.bassi.Amberol
+          # O Bazzite já traz Steam, Lutris, etc via Portal.
+
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.socket
+      # NÃO mascare serviços de rede aqui (Bazzite precisa deles pro gamemode/updates)
+      masked:
+        - plymouth-quit-wait.service # Opcional: Acelera o boot visualmente
 
   - type: signing

@@ -66,5 +66,6 @@ modules:
           - it.mijorus.gearlever
           - io.github.kolunmi.Bazaar
           - org.kde.gwenview
+          - io.bassi.Amberol
 
   - type: signing

@@ -40,3 +40,17 @@ jobs:
           name: gnx-deck-iso
           path: ./output/gnx-deck.iso
           if-no-files-found: warn
+
+      # --- ISO 3: WORKSTATION XE ---
+      - name: Build Workstation XE ISO
+        uses: blue-build/github-action@v1.8
+        with:
+          recipe: recipes/workstation-xe.yml
+          iso_name: gnx-workstation-xe.iso
+
+      - name: Upload Workstation XE ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: gnx-workstation-xe-iso
+          path: ./output/gnx-workstation-xe.iso
+          if-no-files-found: warn

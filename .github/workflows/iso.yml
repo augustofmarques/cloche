@@ -13,19 +13,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # --- ISO 1: WORKSTATION ---
+      # --- ISO 1: WORKSTATION (AURORA) ---
       - name: Build Workstation ISO
         uses: blue-build/github-action@v1.8
         with:
           recipe: recipes/workstation.yml
           iso_name: gnx-workstation.iso
-
-      - name: Upload Workstation ISO
-        uses: actions/upload-artifact@v4
-        with:
-          name: gnx-workstation-iso
-          path: ./output/gnx-workstation.iso
-          if-no-files-found: warn
+          registry_token: ${{ github.token }}
+          signing_secret: ${{ secrets.SIGNING_SECRET }} # <--- TEM QUE TER ISSO AQUI
 
       # --- ISO 2: DECK ---
       - name: Build Deck ISO
@@ -33,24 +28,14 @@ jobs:
         with:
           recipe: recipes/deck.yml
           iso_name: gnx-deck.iso
+          registry_token: ${{ github.token }}
+          signing_secret: ${{ secrets.SIGNING_SECRET }} # <--- E AQUI
 
-      - name: Upload Deck ISO
-        uses: actions/upload-artifact@v4
-        with:
-          name: gnx-deck-iso
-          path: ./output/gnx-deck.iso
-          if-no-files-found: warn
-
-      # --- ISO 3: WORKSTATION XE ---
+      # --- ISO 3: WORKSTATION XE (BAZZITE) ---
       - name: Build Workstation XE ISO
         uses: blue-build/github-action@v1.8
         with:
           recipe: recipes/workstation-xe.yml
           iso_name: gnx-workstation-xe.iso
-
-      - name: Upload Workstation XE ISO
-        uses: actions/upload-artifact@v4
-        with:
-          name: gnx-workstation-xe-iso
-          path: ./output/gnx-workstation-xe.iso
-          if-no-files-found: warn
+          registry_token: ${{ github.token }}
+          signing_secret: ${{ secrets.SIGNING_SECRET }} # <--- E AQUI TAMBÉM

@@ -1,16 +1,27 @@
-# Garante que a pasta existe no repo
-mkdir -p files/common/etc/skel/
+# .bashrc
 
-# Vamos criar um .bashrc padrão no repo que já tenha o alias
-# (Se você já tiver um .bashrc lá, isso vai sobrescrever, mas como é novo, tudo bem)
-cat <<EOF > files/common/etc/skel/.bashrc
-# .bashrc do GNX
-
-# Carrega as configurações globais
+# Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
-# O Fix do GNX para forçar o Fastfetch correto
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+alias fastfetch='/usr/bin/fastfetch --config ~/.config/fastfetch/config.jsonc'
 alias fastfetch='/usr/bin/fastfetch --config /etc/fastfetch/config.jsonc'
-EOF

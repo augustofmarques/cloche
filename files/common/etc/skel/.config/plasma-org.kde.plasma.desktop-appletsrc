@@ -18,7 +18,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=55
+PreloadWeight=75
 popupHeight=451
 popupWidth=560
 
@@ -57,7 +57,6 @@ DialogWidth=810
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
-icon=icon=start-here-kde
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][4]
@@ -141,28 +140,35 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][7][Applets][23][Configuration]
-PreloadWeight=15
+PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][24]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][2][Applets][7][Applets][24][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][25]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][25][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][26]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][2][Applets][7][Applets][26][Configuration]
-PreloadWeight=55
+PreloadWeight=65
+
+[Containments][2][Applets][7][Applets][30]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][2][Applets][7][Applets][30][Configuration]
+PreloadWeight=42
 
 [Containments][2][Applets][7][Applets][8]
 immutability=1
@@ -203,7 +209,7 @@ DialogWidth=1361
 positions={"1920x1080":[]}
 
 [Containments][29][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Coast/
+Image=file:///usr/share/wallpapers/Altai/
 SlidePaths=/usr/share/wallpapers/
 
 [ScreenMapping]

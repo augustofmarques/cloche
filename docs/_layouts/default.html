@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title }} | {{ site.title }}</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{{ site.baseurl }}/">Home</a>
+                <a href="https://github.com/wolframium/gnx-workstation"
+                    >GitHub</a
+                >
+            </nav>
+            <div class="logo">{% include icon-logo.svg %}</div>
+        </header>
+
+        <main>{{ content }}</main>
+
+        <footer>
+            <p>Desenvolvido por Augusto Marques (Wolframium)</p>
+        </footer>
+    </body>
+</html>

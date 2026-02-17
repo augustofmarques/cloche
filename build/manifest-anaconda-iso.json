@@ -8677,7 +8677,7 @@
         {
           "type": "org.osbuild.mkfs.fat",
           "options": {
-            "volid": "6FCCBCBB"
+            "volid": "123C6BE7"
           },
           "devices": {
             "device": {
@@ -8764,7 +8764,7 @@
               "type": "org.osbuild.containers-storage",
               "origin": "org.osbuild.source",
               "references": {
-                "sha256:63a1c009427b4dd65cf9f1c26179626677dcf8e8795cb134d842be05f1ad5a77": {
+                "sha256:41f08a25ba671386fb3db178425d7ddb38ceb7cb5003d3aaa20b4ba929e3ea2d": {
                   "name": "ghcr.io/augustofmarques/gnx-server:latest"
                 }
               }
@@ -8894,7 +8894,7 @@
   "sources": {
     "org.osbuild.containers-storage": {
       "items": {
-        "sha256:63a1c009427b4dd65cf9f1c26179626677dcf8e8795cb134d842be05f1ad5a77": {}
+        "sha256:41f08a25ba671386fb3db178425d7ddb38ceb7cb5003d3aaa20b4ba929e3ea2d": {}
       }
     },
     "org.osbuild.inline": {

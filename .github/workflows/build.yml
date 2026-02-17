@@ -8,19 +8,21 @@ on:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
       - "docs/**"
-      - "README.md"
-      - ".github/workflows/pages.yml" # Caso a gente crie um workflow pro site no futuro
       - "site/**"
+      - "LICENSE"
+      - ".github/workflows/pages.yml"
 
   pull_request:
     branches:
       - main
-      #- master
-    paths-ignore:
+    paths-ignore: # Deixei igual ao push para garantir
+      - "**.md"
       - "docs/**"
-      - "README.md"
+      - "site/**"
+      - "LICENSE"
 
   workflow_dispatch: # allow manually triggering builds
+
 concurrency:
   # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}

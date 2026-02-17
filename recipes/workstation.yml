@@ -69,3 +69,7 @@ modules:
           - io.bassi.Amberol
 
   - type: signing
+
+  - type: script
+      scripts:
+        - setup-workstation.sh  # Nome do script que está na pasta 'scripts/'

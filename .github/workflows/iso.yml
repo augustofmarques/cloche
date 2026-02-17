@@ -45,3 +45,14 @@ jobs:
           iso_name: gnx-workstation-xe.iso
           registry_token: ${{ github.token }}
           signing_secret: ${{ secrets.SIGNING_SECRET }} # <--- E AQUI TAMBÉM
+
+      # --- ISO 4: SERVER (ALMALINUX BOOTC) ---
+      - name: Build Server ISO
+        uses: blue-build/github-action@v1.8
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+        with:
+          recipe: recipes/server.yml
+          iso_name: gnx-server.iso
+          registry_token: ${{ github.token }}
+          signing_secret: ${{ secrets.SIGNING_SECRET }}

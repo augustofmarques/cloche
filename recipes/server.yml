@@ -1,0 +1,52 @@
+name: gnx-server
+description: GNX Server - Based on AlmaLinux 10
+base-image: quay.io/almalinux/almalinux-bootc:10
+image-version: latest
+
+modules:
+  # 1. Instalação de Pacotes (Via DNF)
+  - type: containerfile
+    snippets:
+      - |
+        # Atualiza o sistema base
+        RUN dnf -y upgrade --refresh
+
+        # Instala EPEL (Necessário para Fastfetch e ferramentas extras no RHEL/Alma)
+        # Nota: No Alma 10, confirme se o pacote se chama epel-release mesmo.
+        RUN dnf -y install epel-release
+
+        # Instala ferramentas essenciais de servidor + Distrobox
+        RUN dnf -y install \
+            fastfetch \
+            cockpit \
+            cockpit-podman \
+            podman \
+            distrobox \
+            tmux \
+            btop \
+            vim \
+            git \
+            curl \
+            wget \
+            tar \
+            procps-ng \
+            bind-utils \
+            firewalld
+
+        # Habilita serviços essenciais
+        RUN systemctl enable cockpit.socket
+        RUN systemctl enable firewalld
+        RUN systemctl enable podman.socket
+
+  # 2. Copia arquivos (Branding e Configs)
+  - type: files
+    files:
+      - source: common # Pega seu bashrc (aliases)
+        destination: /
+      - source: server # Pega configs específicas do servidor (os-release, fastfetch simplificado)
+        destination: /
+
+  # 3. Scripts Pós-Instalação (Se necessário)
+  - type: script
+    scripts:
+      - post-install-server.sh # (Crie esse arquivo vazio se não tiver nada pra rodar)

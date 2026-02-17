@@ -1,0 +1,24 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "AlmaLinux", 
+    "color": { "1": "red" } // Força vermelho GNX/Red Hat
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "cpu",
+    "memory",
+    "disk",
+    "localip",
+    "publicip", // Muito útil em servidor!
+    "break",
+    "colors"
+  ]
+}

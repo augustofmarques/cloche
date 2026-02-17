@@ -7,7 +7,7 @@ GITHUB_USER="augustofmarques"
 TAG="latest"
 
 # Lista das suas imagens (nomes exatos do GHCR)
-IMAGES=("gnx-workstation" "gnx-deck" "gnx-workstation-xe")
+IMAGES=("gnx-workstation" "gnx-deck" "gnx-workstation-xe" "gnx-server")
 
 # --- LÓGICA ---
 
@@ -30,7 +30,8 @@ echo "Choose ISO?"
 echo "1) GNX Workstation (Aurora)"
 echo "2) GNX Deck (Bazzite-deck)"
 echo "3) GNX Workstation XE (Bazzite)"
-echo "4) All"
+echo "4) GNX Server (Alma Linux)"
+echo "5) All"
 read -p "Choose [1-4]: " OPTION
 
 case $OPTION in
@@ -44,7 +45,10 @@ case $OPTION in
         TARGETS=("gnx-workstation-xe")
         ;;
     4)
-        TARGETS=("gnx-workstation" "gnx-deck" "gnx-workstation-xe")
+        TARGETS=("gnx-server")
+        ;;
+    5)
+        TARGETS=("gnx-workstation" "gnx-deck" "gnx-workstation-xe" "gnx-server")
         ;;
     *)
         echo "Option invalid."

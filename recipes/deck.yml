@@ -47,3 +47,7 @@ modules:
   #  packagename: plymouth-theme-spinner
 
   - type: signing
+
+  - type: script
+      scripts:
+        - setup-workstation-xe-deck.sh  # Nome do script que está na pasta 'scripts/'

@@ -1,7 +1,7 @@
 name: gnx-server
 description: GNX Server - Based on AlmaLinux
 base-image: quay.io/almalinuxorg/almalinux-bootc
-image-version: latest
+image-version: 9
 
 modules:
   # 1. Instalação de Pacotes (Via DNF)

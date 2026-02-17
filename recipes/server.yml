@@ -1,6 +1,6 @@
 name: gnx-server
 description: GNX Server - Based on AlmaLinux 10
-base-image: quay.io/almalinux/almalinux-bootc:10
+base-image: quay.io/almalinux/almalinux-bootc
 image-version: latest
 
 modules:

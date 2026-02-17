@@ -53,5 +53,5 @@ modules:
   - type: signing
 
   - type: script
-      scripts:
-        - setup-workstation-xe.sh  # Nome do script que está na pasta 'scripts/'
+    scripts:
+      - setup-workstation-xe.sh # Nome do script que está na pasta 'scripts/'

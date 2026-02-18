@@ -1,32 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | GNX Workstation</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title }} | GNX Workstation</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo"><strong>GNX</strong> Workstation</div>
+                    <div>
+                        <a href="{{ site.baseurl }}/">Home</a>
+                        <a href="https://github.com/wolframium/seu-repo-aqui"
+                            >GitHub</a
+                        >
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo"><strong>GNX</strong> Workstation</div>
-                <div>
-                    <a href="{{ site.baseurl }}/">Home</a>
-                    <a href="https://github.com/wolframium/seu-repo-aqui">GitHub</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+        <main class="container">{{ content }}</main>
 
-    <main class="container">
-        {{ content }}
-    </main>
-
-    <footer>
-        <p>Desenvolvido com BlueBuild & Jekyll</p>
-    </footer>
-
-</body>
+        <footer>
+            <p>Desenvolvido com BlueBuild & Jekyll</p>
+        </footer>
+    </body>
 </html>

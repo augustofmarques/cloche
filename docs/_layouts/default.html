@@ -1,26 +1,32 @@
-<!doctype html>
-<html lang="en-uk">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ page.title }} | {{ site.title }}</title>
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
-    </head>
-    <body>
-        <header>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | GNX Workstation</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
             <nav>
-                <a href="{{ site.baseurl }}/">Home</a>
-                <a href="https://github.com/wolframium/gnx-workstation"
-                    >GitHub</a
-                >
+                <div class="logo"><strong>GNX</strong> Workstation</div>
+                <div>
+                    <a href="{{ site.baseurl }}/">Home</a>
+                    <a href="https://github.com/wolframium/seu-repo-aqui">GitHub</a>
+                </div>
             </nav>
-            <div class="logo">{% include icon-logo.svg %}</div>
-        </header>
+        </div>
+    </header>
 
-        <main>{{ content }}</main>
+    <main class="container">
+        {{ content }}
+    </main>
 
-        <footer>
-            <p>Desenvolvido por Augusto Marques (Wolframium)</p>
-        </footer>
-    </body>
+    <footer>
+        <p>Desenvolvido com BlueBuild & Jekyll</p>
+    </footer>
+
+</body>
 </html>

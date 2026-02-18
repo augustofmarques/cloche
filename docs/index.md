@@ -13,8 +13,8 @@ title: Home
 
 <div class="grid">
     <div class="card">
-        <h3>Imutável</h3>
-        <p>Baseado na tecnologia ostree. Seu sistema nunca quebra em atualizações.</p>
+        <h3>Immutable</h3>
+        <p>Based on os-tree. Your system not only won't break during update and even so it allows you to rollback to previous versions.</p>
     </div>
     <div class="card">
         <h3>Latest desktop experience</h3>
@@ -30,14 +30,14 @@ title: Home
 
 <div id="install"></div>
 
-## Instalação
+## Instalation
 
-For clean install download and flash image files (.iso) onto flash driver
+For clean install download and flash image files (.iso) onto flash drive
 
 or
 
 If you're on Fedora Atomic or any Universal Blue OS you can **rebase** or *switch bootc* without losing any data:
 
 ```bash
-# Abra seu terminal e rode:
+# run on your terminal:
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/wolframium/gnx-workstation:latest

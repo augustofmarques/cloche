@@ -1,6 +1,6 @@
 title: GNX
 description: A custom image built with BlueBuild
-theme: jekyll-theme-slate # Pode apagar essa linha se quiser fazer o design do zero (recomendado)
+#theme: jekyll-theme-slate # Pode apagar essa linha se quiser fazer o design do zero (recomendado)
 url: "https://augustofmarques.github.io"
 baseurl: "/gnx" # Nome do seu repositório
 markdown: kramdown

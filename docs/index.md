@@ -4,12 +4,12 @@ title: Home
 ---
 
 <div class="hero">
-    <h1>GNX Workstation</h1>
-    <p>Uma imagem OCI baseada no Fedora Atomic, focada em estabilidade, design e performance.</p>
-    <a href="#instalar" class="btn">Começar Agora</a>
+    <h1>GNX</h1>
+    <p>OCI image based on Ublue, built with blue build.</p>
+    <a href="#install" class="btn">Start Now</a>
 </div>
 
-## Por que GNX?
+## Why GNX?
 
 <div class="grid">
     <div class="card">
@@ -17,22 +17,26 @@ title: Home
         <p>Baseado na tecnologia ostree. Seu sistema nunca quebra em atualizações.</p>
     </div>
     <div class="card">
-        <h3>Design Focado</h3>
-        <p>GNOME limpo, fontes otimizadas e sem bloatware desnecessário.</p>
+        <h3>Latest desktop experience</h3>
+        <p>Up to date KDE Plasma.</p>
     </div>
     <div class="card">
-        <h3>Dev Ready</h3>
-        <p>Vem pronto com Docker, Podman, VSCode e ferramentas de build.</p>
+        <h3>Convenience at install</h3>
+        <p>Comes ready with editors and tooling, and more to come.</p>
     </div>
 </div>
 
 ---
 
-<div id="instalar"></div>
+<div id="install"></div>
 
 ## Instalação
 
-Se você já usa Fedora Silverblue, Kinoite ou qualquer imagem uBlue, basta fazer o **rebase**:
+For clean install download and flash image files (.iso) onto flash driver
+
+or
+
+If you're on Fedora Atomic or any Universal Blue OS you can **rebase** or *switch bootc* without losing any data:
 
 ```bash
 # Abra seu terminal e rode:

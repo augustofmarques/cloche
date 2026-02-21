@@ -29,7 +29,6 @@ modules:
       - zsh
       - btop
       - docker
-      - brew
       - plymouth-theme-spinner
       #- ffmpeg
       #- gstreamer1-plugin-libav

@@ -37,7 +37,8 @@ modules:
       #- gstreamer1-plugins-ugly-free
 
     remove:
-      - htop
+      #- htop Commented out due to some issues removing packages on some
+      # upstream images.
 
   - type: kargs
     kargs:

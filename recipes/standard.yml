@@ -76,7 +76,7 @@ modules:
           - io.gitlab.librewolf-community
           - org.kde.ark
           - it.mijorus.gearlever
-          - io.github.kolunmi.Bazaar
+          #- io.github.kolunmi.Bazaar
           - org.kde.gwenview
           - io.bassi.Amberol
 

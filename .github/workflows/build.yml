@@ -15,7 +15,7 @@ on:
   pull_request:
     branches:
       - main
-    paths-ignore: # Deixei igual ao push para garantir
+    paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
       - "docs/**"
       - "site/**"
@@ -40,10 +40,9 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - workstation.yml
+          - standard.yml
           - deck.yml
           - workstation-xe.yml
-          - server.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

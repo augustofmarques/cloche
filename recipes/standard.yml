@@ -79,6 +79,7 @@ modules:
           #- io.github.kolunmi.Bazaar
           - org.kde.gwenview
           - io.bassi.Amberol
+          - io.github.shonebinu.Brief
 
   - type: signing
 

@@ -30,6 +30,7 @@ modules:
       - btop
       - docker
       - plymouth-theme-spinner
+      - fastfetch
       #- ffmpeg
       #- gstreamer1-plugin-libav
       # gstreamer1-plugins-bad-free-extras
@@ -39,14 +40,14 @@ modules:
     #- htop Commented out due to some issues removing packages on some
     # upstream images.
 
-  #- type: kargs
-  #kargs:
-  #- nowatchdog # Turns of freeze checking
-  #- modprobe.blacklist=iTCO_wdt # Turns off watchdog Intel driver
-  #- random.trust_cpu=on # Speeds up initial encryption
-  #- console=tty0 # Main console focus, ignore serials
-  #- quiet # Self explanatory
-  #- splash # Guarantees boot animation for desktop images, may be unecessary
+  - type: kargs
+    kargs:
+      #- nowatchdog # Turns of freeze checking
+      #- modprobe.blacklist=iTCO_wdt # Turns off watchdog Intel driver
+      #- random.trust_cpu=on # Speeds up initial encryption
+      #- console=tty0 # Main console focus, ignore serials
+      - quiet # Self explanatory
+      - splash # Guarantees boot animation for desktop images, may be unecessary
 
   - type: systemd
     system:

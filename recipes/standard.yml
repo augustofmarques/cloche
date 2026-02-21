@@ -44,11 +44,12 @@ modules:
     kargs:
       #- nowatchdog # Turns of freeze checking
       #- modprobe.blacklist=iTCO_wdt # Turns off watchdog Intel driver
-      #- random.trust_cpu=on # Speeds up initial encryption
-      #- console=tty0 # Main console focus, ignore serials
+      - random.trust_cpu=on # Speeds up initial encryption
+      - console=tty0 # Main console focus, ignore serials
       - quiet # Self explanatory
       - splash # Guarantees boot animation for desktop images, may be unecessary
-
+      - rhgb
+      -
   - type: systemd
     system:
       enabled:

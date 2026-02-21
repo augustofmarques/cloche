@@ -1,21 +1,21 @@
-name: cloche-xe-deck
-description: Workstation Extended Deck Edition
-base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: stable
+name: cloche-xe
+description: Workstation Extended
+base-image: ghcr.io/ublue-os/bazzite
+image-version: stable #Bazzite doesn't use latest.
 
 modules:
   - type: files
     files:
       - source: common
         destination: /
-      - source: deck
+      - source: cloche-xe
         destination: /
 
   - type: os-release
     properties:
-      ID: cloche-xe-deck
-      NAME: Cloche Xe Deck
-      PRETTY_NAME: Cloche Xe Deck
+      ID: cloche-xe
+      NAME: Cloche Xe
+      PRETTY_NAME: Cloche Xe
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx
@@ -29,13 +29,14 @@ modules:
       - zsh
       - btop
 
-    #remove:
-    #  -
-
-  - type: systemd
-    system:
-      enabled:
-        - cockpit.socket
+  - type: kargs
+    kargs:
+      - quiet
+      - splash
+      - rhgb # Red Hat Graphical Boot
+      - rd.udev.log_priority=3
+      - vt.global_cursor_default=0
+      - systemd.show_status=auto
 
   - type: default-flatpaks
     configurations:
@@ -43,13 +44,19 @@ modules:
         scope: system
         install:
           - dev.zed.Zed
-          - org.blender.Blender
           - io.gitlab.librewolf-community
-          - it.mijorus.gearlever
+          - org.kde.ark
           - io.bassi.Amberol
 
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.socket
+      # DO NOT mask services here (Bazzite needs them for gamemode/updates)
+      masked:
+        - plymouth-quit-wait.service # Optional: Speeds up boot visually
   - type: signing
 
   - type: script
     scripts:
-      - setup-cloche-xe-deck.sh
+      - setup-cloche-xe.sh

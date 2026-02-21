@@ -42,7 +42,7 @@ jobs:
           # !! Add your recipes here
           - standard.yml
           - deck.yml
-          - workstation-xe.yml
+          - cloche-xe.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

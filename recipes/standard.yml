@@ -61,6 +61,9 @@ modules:
         - plymouth-quit-wait.service
         - gssproxy.service
         - rpc-gssd.service
+        - rd.udev.log_priority=3 # Hide hardware logs (systemd-udev)
+        - vt.global_cursor_default=0 # Hides cursor
+        - systemd.show_status=auto # Only show status if critical error occurs
         #- ModemManager.service
 
   - type: default-flatpaks

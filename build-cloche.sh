@@ -7,12 +7,12 @@ GITHUB_USER="augustofmarques"
 TAG="latest"
 
 # Lista das suas imagens (nomes exatos do GHCR)
-IMAGES=("gnx-workstation" "gnx-deck" "gnx-workstation-xe" "gnx-server")
+IMAGES=("cloche-standard" "cloche-xe-deck" "cloche-xe")
 
 # --- LÓGICA ---
 
 echo "=========================================="
-echo "            GNX ISO GENERATOR             "
+echo "          CLOCHE ISO GENERATOR            "
 echo "=========================================="
 echo "Usuário: $GITHUB_USER"
 echo "Tag: $TAG"
@@ -27,28 +27,24 @@ fi
 
 # Menu de Seleção
 echo "Choose ISO?"
-echo "1) GNX Workstation (Aurora)"
-echo "2) GNX Deck (Bazzite-deck)"
-echo "3) GNX Workstation XE (Bazzite)"
-echo "4) GNX Server (Alma Linux)"
-echo "5) All"
+echo "1) Cloche Standard"
+echo "2) Cloche Xe Deck"
+echo "3) Cloche Xe"
+echo "4) All"
 read -p "Choose [1-4]: " OPTION
 
 case $OPTION in
     1)
-        TARGETS=("gnx-workstation")
+        TARGETS=("cloche-standard")
         ;;
     2)
-        TARGETS=("gnx-deck")
+        TARGETS=("cloche-xe-deck")
         ;;
     3)
-        TARGETS=("gnx-workstation-xe")
+        TARGETS=("cloche-xe")
         ;;
     4)
-        TARGETS=("gnx-server")
-        ;;
-    5)
-        TARGETS=("gnx-workstation" "gnx-deck" "gnx-workstation-xe" "gnx-server")
+        TARGETS=("cloche-standard" "cloche-xe-deck" "cloche-xe")
         ;;
     *)
         echo "Option invalid."

@@ -4,13 +4,6 @@ base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
 
 modules:
-  - type: files
-    files:
-      - source: common
-        destination: /
-      - source: deck
-        destination: /
-
   - type: os-release
     properties:
       ID: cloche-xe-deck
@@ -20,6 +13,13 @@ modules:
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx
       DEFAULT_HOSTNAME: cloche-xe
+
+  - type: files
+    files:
+      - source: common
+        destination: /
+      - source: deck
+        destination: /
 
   - type: rpm-ostree
     install:

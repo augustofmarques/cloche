@@ -1,5 +1,5 @@
 [General]
-LogoPath=/usr/share/pixmaps/system-logo-white.png
+LogoPath=/usr/share/icons/breeze/places/cloche-symbolic-current.svg
 Name=Cloche
 Website=https://clocheproejct.org
 Variant=Standard Edition

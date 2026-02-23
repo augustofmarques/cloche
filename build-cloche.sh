@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# --- CONFIGURAÇÃO ---
-# Seu usuário do GitHub (tudo minúsculo geralmente)
+# --- Setup ---
 GITHUB_USER="augustofmarques"
-# Versão da imagem (latest é o padrão)
+
 TAG="latest"
 
-# Lista das suas imagens (nomes exatos do GHCR)
-IMAGES=("cloche-standard" "cloche-xe-deck" "cloche-xe")
 
-# --- LÓGICA ---
+IMAGES=("cloche-standard" "cloche-xe-deck" "cloche-xe")
 
 echo "=========================================="
 echo "          CLOCHE ISO GENERATOR            "
@@ -18,14 +15,14 @@ echo "Usuário: $GITHUB_USER"
 echo "Tag: $TAG"
 echo "------------------------------------------"
 
-# Verifica se o BlueBuild está instalado
+# Verifies if BlueBuild is installed
 if ! command -v bluebuild &> /dev/null; then
     echo "❌ Error:'bluebuild' command not found."
     echo "Install with: pip install bluebuild (or package manager)"
     exit 1
 fi
 
-# Menu de Seleção
+# Select menu
 echo "Choose ISO?"
 echo "1) Cloche Standard"
 echo "2) Cloche Xe Deck"
@@ -52,14 +49,14 @@ case $OPTION in
         ;;
 esac
 
-# O Loop de Construção
+# Image generation loop
 for IMAGE_NAME in "${TARGETS[@]}"; do
     echo ""
     echo "💿 Generating ISO: $IMAGE_NAME..."
 
     # Monta o comando
-    # --no-sign: Usamos isso localmente para evitar problemas de chave no seu PC.
-    # A imagem DENTRO da ISO já vem assinada do GitHub, então é seguro.
+    # --no-sign: used to avoid issues with conflicting keys.
+    # Image inside the ISO is already signed by GitHub, so it's safe.
     sudo bluebuild generate-iso \
         --iso-name "$IMAGE_NAME.iso" \
         image "ghcr.io/$GITHUB_USER/$IMAGE_NAME:$TAG" \

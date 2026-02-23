@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Define qual imagem usar
+
 IMAGE="ghcr.io/augustofmarques/gnx-server:latest"
 
 echo "🧹 Limpando builds antigos..."
@@ -8,11 +8,11 @@ rm -rf build
 mkdir -p build
 
 echo "⬇️ Baixando a versão mais recente do GitHub..."
-# Força o podman a baixar a imagem nova (do Alma 9)
+
 sudo podman pull $IMAGE
 
 echo "💿 Iniciando o Bootc Image Builder..."
-# O comando blindado
+
 sudo podman run \
     --rm \
     -it \

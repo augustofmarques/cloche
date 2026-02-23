@@ -1,6 +1,6 @@
 name: cloche-standard
 description: Standard
-base-image: ghcr.io/ublue-os/kinoite-nvidia
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: latest
 
 modules:

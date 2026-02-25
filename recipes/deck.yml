@@ -20,6 +20,8 @@ modules:
         destination: /
       - source: deck
         destination: /
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     install:
@@ -47,6 +49,7 @@ modules:
           - io.gitlab.librewolf-community
           - it.mijorus.gearlever
           - io.bassi.Amberol
+          - org.localsend.localsend_app
 
   - type: signing
 

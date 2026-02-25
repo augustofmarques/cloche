@@ -20,6 +20,8 @@ modules:
         destination: /
       - source: cloche-xe
         destination: /
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     install:
@@ -47,6 +49,7 @@ modules:
           - io.gitlab.librewolf-community
           - org.kde.ark
           - io.bassi.Amberol
+          - org.localsend.localsend_app
 
   - type: systemd
     system:

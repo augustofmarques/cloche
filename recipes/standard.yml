@@ -20,6 +20,8 @@ modules:
         destination: /
       - source: standard
         destination: /
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     install:
@@ -80,6 +82,7 @@ modules:
           - org.kde.gwenview
           - io.bassi.Amberol
           - io.github.shonebinu.Brief
+          - org.localsend.localsend_app
 
   - type: signing
 

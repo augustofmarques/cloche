@@ -38,6 +38,11 @@ modules:
       # gstreamer1-plugins-bad-free-extras
       #- gstreamer1-plugins-ugly-free
 
+  - type: dnf
+    install:
+      packages:
+        - plymouth-plugin-script
+
     #remove:
     #- htop Commented out due to some issues removing packages on some
     # upstream images.

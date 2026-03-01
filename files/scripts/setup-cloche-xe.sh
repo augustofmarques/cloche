@@ -1,2 +1,2 @@
 #!/bin/bash
-plymouth-set-default-theme tests
+plymouth-set-default-theme test

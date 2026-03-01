@@ -63,3 +63,5 @@ modules:
   - type: script
     scripts:
       - setup-cloche-xe.sh
+
+  - type: initramfs

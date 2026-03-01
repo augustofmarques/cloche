@@ -56,3 +56,5 @@ modules:
   - type: script
     scripts:
       - setup-cloche-xe-deck.sh
+      -
+  - type: initramfs

@@ -15,7 +15,7 @@ jobs:
 
       # --- ISO 1: WORKSTATION (AURORA) ---
       - name: Build Workstation ISO
-        uses: blue-build/github-action@v1.8
+        uses: blue-build/github-action@v1.11
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
@@ -26,7 +26,7 @@ jobs:
 
       # --- ISO 2: DECK ---
       - name: Build Deck ISO
-        uses: blue-build/github-action@v1.8
+        uses: blue-build/github-action@v1.11
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
@@ -37,7 +37,7 @@ jobs:
 
       # --- ISO 3: WORKSTATION XE (BAZZITE) ---
       - name: Build Workstation XE ISO
-        uses: blue-build/github-action@v1.8
+        uses: blue-build/github-action@v1.11
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:
@@ -48,7 +48,7 @@ jobs:
 
       # --- ISO 4: SERVER (ALMALINUX BOOTC) ---
       - name: Build Server ISO
-        uses: blue-build/github-action@v1.8
+        uses: blue-build/github-action@v1.11
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         with:

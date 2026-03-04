@@ -44,6 +44,7 @@ modules:
       - rd.udev.log_priority=3
       - vt.global_cursor_default=0
       - systemd.show_status=auto
+      - plymouth.theme=spinner
 
   - type: default-flatpaks
     configurations:

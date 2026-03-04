@@ -36,6 +36,10 @@ modules:
       packages:
         - plymouth-plugin-script
 
+  - type: kargs
+    kargs:
+      - plymouth.theme=spinner
+
     #remove:
     #  -
 

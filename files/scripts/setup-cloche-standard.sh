@@ -1,2 +1,2 @@
 #!/bin/bash
-plymouth-set-default-theme test
+plymouth-set-default-theme spinner

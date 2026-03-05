@@ -20,6 +20,10 @@ cp -fv $HOME/.config/kglobalshortcutsrc $SKEL_DIR/.config/
 echo "⌨️ Copying Konsole defaults"
 cp -fv $HOME/.config/konsolerc $SKEL_DIR/.config/
 cp -fv $HOME/.local/share/konsole/*.profile $SKEL_DIR/.local/share/konsole/
+# Captura o estado da Interface do Konsole (onde fica a config de esconder a Toolbar)
+mkdir -p files/system/etc/skel/.local/share/kxmlgui5/konsole/
+cp -fv $HOME/.local/share/kxmlgui5/konsole/sessionui.rc files/system/etc/skel/.local/share/kxmlgui5/konsole/
+cp -fv $HOME/.local/share/kxmlgui5/konsole/konsoleui.rc files/system/etc/skel/.local/share/kxmlgui5/konsole/
 
 echo "---------------------------------------------------"
 

@@ -134,8 +134,7 @@ ForegroundVisited=155,89,182
 
 [General]
 AccentColor=3,184,197
-ColorScheme=ClocheDark
-ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
+ColorSchemeHash=a520bfd402716ee2eb75762091adbbb5a2055f02
 LastUsedCustomAccentColor=3,184,197
 TerminalApplication=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=konsole org.kde.konsole
 TerminalService=org.kde.konsole.desktop

@@ -5,4 +5,10 @@ DefaultProfile=Main.profile
 ConfigVersion=1
 
 [UiSettings]
-ColorScheme=
+ColorScheme=Cloche
+
+[Background]
+Color=0,0,0,150
+
+[Appearance]
+ColorScheme=Cloche

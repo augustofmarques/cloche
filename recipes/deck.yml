@@ -14,6 +14,14 @@ modules:
       SUPPORT_URL: https://github.com/augustofmarques/gnx
       DEFAULT_HOSTNAME: cloche-xe
 
+  - type: rpm-ostree
+    install:
+      - cockpit
+      - git
+      - distrobox
+      - zsh
+      - btop
+
   - type: files
     files:
       - source: common
@@ -22,14 +30,6 @@ modules:
         destination: /
       - source: system
         destination: /
-
-  - type: rpm-ostree
-    install:
-      - cockpit
-      - git
-      - distrobox
-      - zsh
-      - btop
 
   - type: dnf
     install:
@@ -59,6 +59,7 @@ modules:
           - it.mijorus.gearlever
           - io.bassi.Amberol
           - org.localsend.localsend_app
+          - org.mozilla.firefox
 
   - type: signing
 

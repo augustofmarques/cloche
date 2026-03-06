@@ -21,6 +21,8 @@ modules:
       - distrobox
       - zsh
       - btop
+      - firefox
+      - firefox-langpacks
 
   - type: files
     files:
@@ -59,7 +61,7 @@ modules:
           - it.mijorus.gearlever
           - io.bassi.Amberol
           - org.localsend.localsend_app
-          - org.mozilla.firefox
+        #  - org.mozilla.firefox
 
   - type: signing
 

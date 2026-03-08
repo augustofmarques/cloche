@@ -1,45 +1,48 @@
 #!/bin/bash
 
-# Define target directories in the repository
-XDG_DIR="files/system/etc/xdg"
+# Target directories
 SKEL_DIR="files/system/etc/skel"
 
-# 1. Create directory structures
-echo "📁 Creating folders if they do not exist..."
-mkdir -p $XDG_DIR
+echo "📁 Creating folders..."
+mkdir -p $SKEL_DIR/.config/
 mkdir -p $SKEL_DIR/.local/share/konsole/
 mkdir -p $SKEL_DIR/.local/share/kxmlgui5/konsole/
 
-# 2. Copy Plasma setup to XDG (Global Defaults)
-echo "🖼️ Copying Plasma global setup to XDG..."
-cp -fv $HOME/.config/plasma-org.kde.plasma.desktop-appletsrc $XDG_DIR/
-cp -fv $HOME/.config/kdeglobals $XDG_DIR/
-cp -fv $HOME/.config/kwinrc $XDG_DIR/
-cp -fv $HOME/.config/kscreenlockerrc $XDG_DIR/
-cp -fv $HOME/.config/kglobalshortcutsrc $XDG_DIR/
+echo "🖼️ Copying Plasma global setup to Skel..."
+cp -fv $HOME/.config/plasma-org.kde.plasma.desktop-appletsrc $SKEL_DIR/.config/
+cp -fv $HOME/.config/kdeglobals $SKEL_DIR/.config/
+cp -fv $HOME/.config/kwinrc $SKEL_DIR/.config/
+cp -fv $HOME/.config/kscreenlockerrc $SKEL_DIR/.config/
+cp -fv $HOME/.config/kglobalshortcutsrc $SKEL_DIR/.config/
 
-# 3. Copy Konsole defaults (Mix of XDG and Skel)
+# Capture Kickoff Favorites (Application Launcher)
+echo "⭐ Copying Application Launcher Favorites..."
+cp -fv $HOME/.config/kactivitymanagerdrc $SKEL_DIR/.config/
+cp -fv $HOME/.config/kactivitymanagerd-pluginsrc $SKEL_DIR/.config/ 2>/dev/null || true
+
 echo "⌨️ Copying Konsole defaults..."
-# The main config goes to XDG
-cp -fv $HOME/.config/konsolerc $XDG_DIR/
-
-# Profiles and UI layouts go to Skel (App Data)
+cp -fv $HOME/.config/konsolerc $SKEL_DIR/.config/
 cp -fv $HOME/.local/share/konsole/*.profile $SKEL_DIR/.local/share/konsole/
-cp -fv $HOME/.local/share/kxmlgui5/konsole/sessionui.rc $SKEL_DIR/.local/share/kxmlgui5/konsole/
-cp -fv $HOME/.local/share/kxmlgui5/konsole/konsoleui.rc $SKEL_DIR/.local/share/kxmlgui5/konsole/
+cp -fv $HOME/.local/share/kxmlgui5/konsole/sessionui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
+cp -fv $HOME/.local/share/kxmlgui5/konsole/konsoleui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
 
 echo "---------------------------------------------------"
+echo "🧼 Sanitizing absolute local paths in appletsrc..."
 
-# 4. Be mindful of absolute paths (Wallpaper and Icons)
-echo "🔍 Verifying local paths on appletsrc..."
-if grep -q "file://$HOME" $XDG_DIR/plasma-org.kde.plasma.desktop-appletsrc; then
-    echo "⚠️ WARNING: The panel/wallpaper layout file contains absolute local paths!"
-    echo "Please open the file below and replace your local home path with the global Cloche path:"
-    echo "📄 File: $XDG_DIR/plasma-org.kde.plasma.desktop-appletsrc"
-    echo "🔄 Change to: file:///usr/share/backgrounds/cloche-light.png (or your chosen path)"
+# This removes the local path prefix from the icon
+sed -i 's|/var/home/augusto/Documents/GitHub/gnx/files/common||g' $SKEL_DIR/.config/plasma-org.kde.plasma.desktop-appletsrc
+sed -i 's|/home/augusto/Documents/GitHub/gnx/files/common||g' $SKEL_DIR/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+# This removes the local path prefix from the wallpaper
+sed -i 's|/var/home/augusto/Documents/GitHub/gnx/files/system||g' $SKEL_DIR/.config/plasma-org.kde.plasma.desktop-appletsrc
+sed -i 's|/home/augusto/Documents/GitHub/gnx/files/system||g' $SKEL_DIR/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+# Verify if sanitization worked
+if grep -q "home/augusto" $SKEL_DIR/.config/plasma-org.kde.plasma.desktop-appletsrc; then
+    echo "⚠️ WARNING: Some local paths might still be present. Please check manually!"
 else
-    echo "✅ No '/home' paths found. All clean!"
+    echo "✅ Absolute paths successfully replaced with global /usr/share paths!"
 fi
 
 echo "---------------------------------------------------"
-echo "🚀 Capture complete."
+echo "🚀 Capture complete! Review the files and run git add/commit/push."

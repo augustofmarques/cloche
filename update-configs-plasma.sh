@@ -23,8 +23,8 @@ cp -fv $HOME/.config/kactivitymanagerd-pluginsrc $SKEL_DIR/.config/ 2>/dev/null 
 echo "⌨️ Copying Konsole defaults..."
 cp -fv $HOME/.config/konsolerc $SKEL_DIR/.config/
 cp -fv $HOME/.local/share/konsole/*.profile $SKEL_DIR/.local/share/konsole/
-cp -fv $HOME/.local/share/kxmlgui5/konsole/sessionui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
-cp -fv $HOME/.local/share/kxmlgui5/konsole/konsoleui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
+cp -fv $HOME/.local/share/kxmlgui6/konsole/sessionui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
+cp -fv $HOME/.local/share/kxmlgui6/konsole/konsoleui.rc $SKEL_DIR/.local/share/kxmlgui6/konsole/
 
 echo "---------------------------------------------------"
 echo "🧼 Sanitizing absolute local paths in appletsrc..."

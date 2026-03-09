@@ -20,7 +20,7 @@ modules:
         destination: /
       - source: standard
         destination: /
-      - source: system
+      - source: kde
         destination: /
 
   - type: rpm-ostree
@@ -89,10 +89,10 @@ modules:
           - io.github.shonebinu.Brief
           - org.localsend.localsend_app
 
-  - type: signing
-
   - type: script
     scripts:
       - setup-cloche-standard.sh # Located at 'scripts/'
 
   - type: initramfs
+
+  - type: signing

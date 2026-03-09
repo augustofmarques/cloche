@@ -30,7 +30,7 @@ modules:
         destination: /
       - source: cloche-xe
         destination: /
-      - source: system
+      - source: kde
         destination: /
 
   - type: dnf
@@ -70,10 +70,10 @@ modules:
       disabled:
         - bazzite-user-setup.service
 
-  - type: signing
-
   - type: script
     scripts:
       - setup-cloche-xe.sh
 
   - type: initramfs
+
+  - type: signing

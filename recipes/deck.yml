@@ -30,7 +30,7 @@ modules:
         destination: /
       - source: deck
         destination: /
-      - source: system
+      - source: kde
         destination: /
 
   - type: dnf
@@ -63,10 +63,10 @@ modules:
           - org.localsend.localsend_app
         #  - org.mozilla.firefox
 
-  - type: signing
-
   - type: script
     scripts:
       - setup-cloche-xe-deck.sh
 
   - type: initramfs
+
+  - type: signing

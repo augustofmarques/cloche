@@ -205,7 +205,7 @@ DialogWidth=810
 
 [Containments][58][Wallpaper][org.kde.image][General]
 DynamicMode=2
-Image=/home/augusto/Documents/GitHub/gnx/files/system/usr/share/wallpapers/Towers/contents/images-dark/4096x2160.png
+Image=/usr/share/wallpapers/Towers/contents/images-dark/4096x2160.png
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][59]
@@ -222,7 +222,7 @@ DialogHeight=630
 DialogWidth=810
 
 [Containments][59][Wallpaper][org.kde.image][General]
-Image=/home/augusto/Documents/GitHub/gnx/files/system/usr/share/wallpapers/Towers/contents/images-dark/4096x2160.png
+Image=/usr/share/wallpapers/Towers/contents/images-dark/4096x2160.png
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,0a93888c-27fb-4abe-87c6-2fdbaf35885e,1,desktop:/Return.desktop,1,0a93888c-27fb-4abe-87c6-2fdbaf35885e,7,desktop:/Mega Man Battle Network Legacy Collection Vol. 2.desktop,desktop:/Quake.desktop,desktop:/Freedom Planet 2.desktop,desktop:/Wolfenstein 3D.desktop,desktop:/Mega Man X Legacy Collection 2.desktop,desktop:/Mega Man Battle Network Legacy Collection Vol. 1.desktop,desktop:/Need for Speed Hot Pursuit Remastered.desktop

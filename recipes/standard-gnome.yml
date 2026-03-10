@@ -35,7 +35,11 @@ modules:
       - fastfetch
       # GNOME Tweaks and Extensions Manager are essential here
       - gnome-tweaks
-      - extension-manager
+      #- extension-manager
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-argos
 
   - type: dnf
     install:
@@ -69,6 +73,7 @@ modules:
       - notify: true
         scope: system
         install:
+          - com.mattjakeman.ExtensionManager
           - dev.zed.Zed
           - io.gitlab.librewolf-community
           - it.mijorus.gearlever

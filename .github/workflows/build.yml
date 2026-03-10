@@ -41,6 +41,7 @@ jobs:
         recipe:
           # !! Add your recipes here
           - standard.yml
+          - standard-gnome.yml
           - deck.yml
           - cloche-xe.yml
     steps:

@@ -1,0 +1,84 @@
+name: cloche-standard-gnome
+description: Standard GNOME
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest
+
+modules:
+  - type: os-release
+    properties:
+      ID: cloche
+      NAME: Cloche
+      PRETTY_NAME: Cloche (GNOME)
+      HOME_URL: https://github.com/augustofmarques/gnx
+      BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
+      SUPPORT_URL: https://github.com/augustofmarques/gnx
+      DEFAULT_HOSTNAME: cloche
+
+  - type: files
+    files:
+      - source: common
+        destination: /
+      - source: standard
+        destination: /
+      - source: gnome
+        destination: /
+
+  - type: rpm-ostree
+    install:
+      - cockpit
+      - git
+      - distrobox
+      - zsh
+      - btop
+      - docker
+      - plymouth-theme-spinner
+      - fastfetch
+      # GNOME Tweaks and Extensions Manager are essential here
+      - gnome-tweaks
+      - extension-manager
+
+  - type: dnf
+    install:
+      packages:
+        - plymouth-plugin-script
+
+  - type: kargs
+    kargs:
+      - nowatchdog
+      - random.trust_cpu=on
+      - console=tty0
+      - quiet
+      - splash
+      - rhgb
+      - rd.udev.log_priority=3
+      - vt.global_cursor_default=0
+      - systemd.show_status=auto
+
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.socket
+      masked:
+        - NetworkManager-wait-online.service
+        - plymouth-quit-wait.service
+        - gssproxy.service
+        - rpc-gssd.service
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - dev.zed.Zed
+          - io.gitlab.librewolf-community
+          - it.mijorus.gearlever
+          - io.bassi.Amberol
+          - org.localsend.localsend_app
+
+  - type: script
+    scripts:
+      - setup-cloche-standard-gnome.sh
+
+  - type: initramfs
+
+  - type: signing

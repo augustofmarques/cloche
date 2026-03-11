@@ -60,6 +60,17 @@ rm -f /usr/share/pixmaps/system-logo-white.png
 ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/fedora-gdm-logo.png
 ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/system-logo-white.png
 
-# Compile the GNOME global database from our captured files (CRITICAL FOR FIRST BOOT)
+# Nuke Fedora GDM and System Logos
+echo "Replacing Fedora GDM and System Logos..."
+rm -f /usr/share/pixmaps/fedora-gdm-logo.png
+rm -f /usr/share/pixmaps/system-logo-white.png
+
+ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/fedora-gdm-logo.png
+ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/system-logo-white.png
+
+echo "Nuking upstream skel dconf (The Skel Trap)..."
+rm -rf /etc/skel/.config/dconf
+
+# Compile the GNOME global database from our captured files
 echo "Compiling GNOME dconf database..."
 dconf update

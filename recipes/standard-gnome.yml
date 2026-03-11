@@ -8,7 +8,8 @@ modules:
     properties:
       ID: cloche
       NAME: Cloche
-      PRETTY_NAME: Cloche (GNOME)
+      PRETTY_NAME: Cloche
+      LOGO: system-logo-white
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx

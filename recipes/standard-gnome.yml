@@ -79,6 +79,13 @@ modules:
           - it.mijorus.gearlever
           - io.bassi.Amberol
           - org.localsend.localsend_app
+          - org.gnome.Calculator
+          - org.gnome.TextEditor
+          - org.gnome.Loupe
+          - org.gnome.baobab
+          - org.gnome.Characters
+          - org.gnome.Evince
+          - com.github.tchx84.Flatseal
 
   - type: script
     scripts:

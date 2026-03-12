@@ -1,38 +1,34 @@
-[Ptyxis]
+[org/gnome/Ptyxis]
 default-profile-uuid='5ff25dd532333c1d192781ea69b05bb2'
 profile-uuids=['5ff25dd532333c1d192781ea69b05bb2']
-window-size=(uint32 80, uint32 24)
+window-size=(uint32 212, uint32 47)
 
-[Ptyxis/Profiles/5ff25dd532333c1d192781ea69b05bb2]
+[org/gnome/Ptyxis/Profiles/5ff25dd532333c1d192781ea69b05bb2]
 palette='xterm'
 
-[control-center]
-last-panel='background'
-window-state=(980, 640, false)
-
-[desktop/app-folders]
+[org/gnome/desktop/app-folders]
 folder-children=['System', 'Utilities', 'YaST', 'Pardus']
 
-[desktop/app-folders/folders/Pardus]
+[org/gnome/desktop/app-folders/folders/Pardus]
 categories=['X-Pardus-Apps']
 name='X-Pardus-Apps.directory'
 translate=true
 
-[desktop/app-folders/folders/System]
+[org/gnome/desktop/app-folders/folders/System]
 apps=['org.gnome.DiskUtility.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.tweaks.desktop']
 name='X-GNOME-Shell-System.directory'
 translate=true
 
-[desktop/app-folders/folders/Utilities]
+[org/gnome/desktop/app-folders/folders/Utilities]
 name='X-GNOME-Shell-Utilities.directory'
 translate=true
 
-[desktop/app-folders/folders/YaST]
+[org/gnome/desktop/app-folders/folders/YaST]
 categories=['X-SuSE-YaST']
 name='suse-yast.directory'
 translate=true
 
-[desktop/background]
+[org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
 picture-uri='file:///usr/share/backgrounds/default.png'
@@ -40,17 +36,17 @@ picture-uri-dark='file:///usr/share/backgrounds/default-dark.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
-[desktop/calendar]
+[org/gnome/desktop/calendar]
 show-weekdate=true
 
-[desktop/datetime]
+[org/gnome/desktop/datetime]
 automatic-timezone=true
 
-[desktop/input-sources]
+[org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'us')]
 sources=[('xkb', 'br+thinkpad')]
 
-[desktop/interface]
+[org/gnome/desktop/interface]
 clock-format='24h'
 clock-show-seconds=false
 clock-show-weekday=false
@@ -58,35 +54,38 @@ color-scheme='prefer-dark'
 enable-hot-corners=false
 show-battery-percentage=false
 
-[desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-ptyxis', 'gnome-power-panel', 'gnome-about-panel', 'org-mozilla-firefox', 'io-github-pol-rivero-github-desktop-plus']
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-software', 'org-gnome-ptyxis', 'gnome-power-panel', 'gnome-about-panel', 'org-mozilla-firefox', 'io-github-pol-rivero-github-desktop-plus', 'dev-zed-zed']
 
-[desktop/notifications/application/gnome-about-panel]
+[org/gnome/desktop/notifications/application/dev-zed-zed]
+application-id='dev.zed.Zed.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-about-panel]
 application-id='gnome-about-panel.desktop'
 
-[desktop/notifications/application/gnome-power-panel]
+[org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
-[desktop/notifications/application/io-github-pol-rivero-github-desktop-plus]
+[org/gnome/desktop/notifications/application/io-github-pol-rivero-github-desktop-plus]
 application-id='io.github.pol_rivero.github-desktop-plus.desktop'
 
-[desktop/notifications/application/org-gnome-ptyxis]
+[org/gnome/desktop/notifications/application/org-gnome-ptyxis]
 application-id='org.gnome.Ptyxis.desktop'
 
-[desktop/notifications/application/org-gnome-software]
+[org/gnome/desktop/notifications/application/org-gnome-software]
 application-id='org.gnome.Software.desktop'
 
-[desktop/notifications/application/org-mozilla-firefox]
+[org/gnome/desktop/notifications/application/org-mozilla-firefox]
 application-id='org.mozilla.firefox.desktop'
 
-[desktop/screensaver]
+[org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/default-dark.png'
+picture-uri='file:///usr/share/backgrounds/default.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
-[desktop/wm/keybindings]
+[org/gnome/desktop/wm/keybindings]
 move-to-workspace-down=['<Control><Shift><Alt>Down']
 move-to-workspace-left=['<Super><Shift>KP_Prior', '<Super><Shift><Alt>Left', '<Control><Shift><Alt>Left', '<Super><Shift>Page_Up']
 move-to-workspace-right=['<Super><Shift>KP_Next', '<Super><Shift><Alt>Right', '<Control><Shift><Alt>Right', '<Super><Shift>Page_Down']
@@ -96,69 +95,46 @@ switch-to-workspace-left=['<Super>KP_Prior', '<Super><Alt>Left', '<Control><Alt>
 switch-to-workspace-right=['<Super>KP_Next', '<Super><Alt>Right', '<Control><Alt>Right', '<Super>Page_Down']
 switch-to-workspace-up=['<Control><Alt>Up']
 
-[desktop/wm/preferences]
+[org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=4
 
-[evolution-data-server]
+[org/gnome/evolution-data-server]
 migrated=true
 
-[gnome-system-monitor]
-current-tab='disks'
-maximized=false
-show-dependencies=false
-show-whose-processes='user'
-window-height=720
-window-width=800
-
-[gnome-system-monitor/proctree]
-col-26-visible=false
-col-26-width=0
-
-[login-screen]
-enable-fingerprint-authentication=true
-enable-smartcard-authentication=false
-
-[mutter]
+[org/gnome/mutter]
 dynamic-workspaces=true
 
-[nautilus/icon-view]
-default-zoom-level='small-plus'
-
-[nautilus/preferences]
+[org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 migrated-gtk-settings=true
 
-[nautilus/window-state]
-initial-size=(890, 550)
-initial-size-file-chooser=(890, 550)
-
-[settings-daemon/plugins/color]
+[org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
 
-[settings-daemon/plugins/media-keys]
+[org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 
-[settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
 command='ptyxis'
 name='Open terminal'
 
-[shell]
+[org/gnome/shell]
 disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'argos@pew.worldwidemann.com', 'background-logo@fedorahosted.org', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
 enabled-extensions=['dash-to-panel@jderose9.github.com', 'caffeine@patapon.info', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'vertical-workspaces@G-dH.github.com', 'dash-to-dock@micxgx.gmail.com']
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='49.4'
 
-[shell/extensions/blur-my-shell]
+[org/gnome/shell/extensions/blur-my-shell]
 pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <30>, 'brightness': <0.69999999999999996>, 'unscaled_radius': <50>}>}>]>}, 'pipeline_default_rounded': {'name': <'Default rounded'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000001'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>, <{'type': <'corner'>, 'id': <'effect_000000000002'>, 'params': <{'radius': <24>}>}>]>}}
 settings-version=2
 
-[shell/extensions/blur-my-shell/appfolder]
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
 brightness=0.59999999999999998
 sigma=30
 
-[shell/extensions/blur-my-shell/applications]
+[org/gnome/shell/extensions/blur-my-shell/applications]
 blur=true
 blur-on-overview=false
 brightness=1.0
@@ -168,10 +144,10 @@ opacity=200
 sigma=10
 whitelist=['org.gnome.Ptyxis']
 
-[shell/extensions/blur-my-shell/coverflow-alt-tab]
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
 pipeline='pipeline_default'
 
-[shell/extensions/blur-my-shell/dash-to-dock]
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
 blur=true
 brightness=0.59999999999999998
 pipeline='pipeline_default_rounded'
@@ -179,17 +155,17 @@ sigma=30
 static-blur=true
 style-dash-to-dock=0
 
-[shell/extensions/blur-my-shell/dash-to-panel]
+[org/gnome/shell/extensions/blur-my-shell/dash-to-panel]
 blur-original-panel=true
 
-[shell/extensions/blur-my-shell/lockscreen]
+[org/gnome/shell/extensions/blur-my-shell/lockscreen]
 pipeline='pipeline_default'
 
-[shell/extensions/blur-my-shell/overview]
+[org/gnome/shell/extensions/blur-my-shell/overview]
 blur=true
 pipeline='pipeline_default'
 
-[shell/extensions/blur-my-shell/panel]
+[org/gnome/shell/extensions/blur-my-shell/panel]
 blur=true
 brightness=0.59999999999999998
 override-background=false
@@ -197,18 +173,18 @@ pipeline='pipeline_default'
 sigma=30
 unblur-in-overview=true
 
-[shell/extensions/blur-my-shell/screenshot]
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
 pipeline='pipeline_default'
 
-[shell/extensions/blur-my-shell/window-list]
+[org/gnome/shell/extensions/blur-my-shell/window-list]
 brightness=0.59999999999999998
 sigma=30
 
-[shell/extensions/caffeine]
-indicator-position-max=1
+[org/gnome/shell/extensions/caffeine]
+indicator-position-max=3
 user-enabled=true
 
-[shell/extensions/dash-to-dock]
+[org/gnome/shell/extensions/dash-to-dock]
 apply-custom-theme=false
 background-opacity=0.0
 custom-theme-shrink=true
@@ -223,7 +199,7 @@ preferred-monitor-by-connector='eDP-1'
 preview-size-scale=0.0
 transparency-mode='FIXED'
 
-[shell/extensions/dash-to-panel]
+[org/gnome/shell/extensions/dash-to-panel]
 animate-appicon-hover=true
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
 appicon-margin=2
@@ -263,7 +239,7 @@ trans-use-custom-opacity=false
 trans-use-dynamic-opacity=false
 window-preview-title-position='TOP'
 
-[shell/extensions/vertical-workspaces]
+[org/gnome/shell/extensions/vertical-workspaces]
 aaa-loading-profile=false
 always-activate-selected-window=false
 animation-speed-factor=100
@@ -410,5 +386,5 @@ ws-thumbnails-full=false
 ws-thumbnails-position=5
 wst-position-adjust=0
 
-[tweaks]
+[org/gnome/tweaks]
 show-extensions-notice=false

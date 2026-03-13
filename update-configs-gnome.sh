@@ -18,7 +18,7 @@ echo -e "user-db:user\nsystem-db:local" > $PROFILE_DIR/user
 echo "⚙️ Capturing GNOME settings (dconf dump)..."
 dconf dump /org/gnome/ > $LOCAL_DB/00-cloche-gnome
 
-# --- A MÁGICA: Devolve o prefixo org/gnome para as chaves ---
+#
 sed -i 's/^\[/\[org\/gnome\//' $LOCAL_DB/00-cloche-gnome
 
 # 3. Automagical Sanitization (Scrubbing /home/ and temporary data)
@@ -30,6 +30,8 @@ sed -i "s|^picture-uri-dark=.*|picture-uri-dark='file:///usr/share/backgrounds/d
 
 # Fix Dash to Panel Icon
 sed -i "s|show-apps-icon-file=.*|show-apps-icon-file='/usr/share/icons/breeze/places/cloche-symbolic-current.svg'|g" $LOCAL_DB/00-cloche-gnome
+# Force Dash to Panel to use Monitor 0 (Primary) instead of hardware-specific IDs
+sed -i -E 's/\{"[a-zA-Z0-9-]+-0x[0-9a-fA-F]+"/\{"0"/g' $LOCAL_DB/00-cloche-gnome
 
 # Delete temporary/tracking sections (now matching the org/gnome/ paths)
 sed -i '/^\[org\/gnome\/control-center\]/,/^$/d' $LOCAL_DB/00-cloche-gnome

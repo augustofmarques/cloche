@@ -122,8 +122,8 @@ name='Open terminal'
 
 [org/gnome/shell]
 disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'argos@pew.worldwidemann.com', 'background-logo@fedorahosted.org', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['dash-to-panel@jderose9.github.com', 'caffeine@patapon.info', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'vertical-workspaces@G-dH.github.com', 'dash-to-dock@micxgx.gmail.com']
-last-selected-power-profile='performance'
+enabled-extensions=['dash-to-panel@jderose9.github.com', 'caffeine@patapon.info', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'vertical-workspaces@G-dH.github.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx']
+last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='49.4'
 
 [org/gnome/shell/extensions/blur-my-shell]
@@ -181,7 +181,7 @@ brightness=0.59999999999999998
 sigma=30
 
 [org/gnome/shell/extensions/caffeine]
-indicator-position-max=3
+indicator-position-max=1
 user-enabled=true
 
 [org/gnome/shell/extensions/dash-to-dock]
@@ -216,12 +216,12 @@ focus-highlight-dominant=true
 global-border-radius=1
 hide-overview-on-startup=true
 hotkeys-overlay-combo='TEMPORARILY'
-panel-anchors='{"LEN-0x00000000":"MIDDLE"}'
-panel-element-positions='{"LEN-0x00000000":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-anchors='{"0":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 panel-lengths='{}'
-panel-positions='{"LEN-0x00000000":"TOP"}'
+panel-positions='{"0":"TOP"}'
 panel-side-margins=0
-panel-sizes='{"LEN-0x00000000":32}'
+panel-sizes='{"0":32}'
 prefs-opened=false
 progress-show-count=true
 show-apps-icon-file='/usr/share/icons/breeze/places/cloche-symbolic-current.svg'

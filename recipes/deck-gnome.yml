@@ -1,13 +1,13 @@
-name: cloche-xe
-description: Workstation Extended
-base-image: ghcr.io/ublue-os/bazzite
-image-version: 43 #stable #Bazzite doesn't use latest.
+name: cloche-xe-deck
+description: Workstation Extended Deck Edition
+base-image: ghcr.io/ublue-os/bazzite-deck-gnome
+image-version: 43 #stable
 
 modules:
   - type: os-release
     properties:
-      ID: cloche-xe
-      NAME: Cloche Xe
+      ID: cloche-xe-deck
+      NAME: Cloche Xe Deck
       PRETTY_NAME: Cloche Xe 43 Felt
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
@@ -23,14 +23,18 @@ modules:
       - btop
       - firefox
       - firefox-langpacks
+      - gnome-tweaks
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-caffeine
 
   - type: files
     files:
       - source: common
         destination: /
-      - source: cloche-xe
+      - source: deck
         destination: /
-      - source: kde
+      - source: gnome
         destination: /
 
   - type: dnf
@@ -40,17 +44,19 @@ modules:
 
   - type: kargs
     kargs:
-      - quiet
-      - splash
-      - rhgb # Red Hat Graphical Boot
-      - rd.udev.log_priority=3
-      - vt.global_cursor_default=0
-      - systemd.show_status=auto
       - plymouth.theme=spinner
+
+    #remove:
+    #  -
+
+  - type: systemd
+    system:
+      enabled:
+        - cockpit.socket
 
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false
         scope: system
         install:
           - dev.zed.Zed
@@ -59,20 +65,17 @@ modules:
           - io.bassi.Amberol
           - org.localsend.localsend_app
           #- org.mozilla.firefox
-
-  - type: systemd
-    system:
-      enabled:
-        - cockpit.socket
-      # DO NOT mask services here (Bazzite needs them for gamemode/updates)
-      masked:
-        - plymouth-quit-wait.service # Optional: Speeds up boot visually
-      disabled:
-        - bazzite-user-setup.service
+          - com.mattjakeman.ExtensionManager
+          - dev.zed.Zed
+          - io.gitlab.librewolf-community
+          - io.bassi.Amberol
+          - org.localsend.localsend_app
+          - org.gnome.Calculator
+          - org.gnome.Loupe
 
   - type: script
     scripts:
-      - setup-cloche-xe.sh
+      - S
 
   - type: initramfs
 

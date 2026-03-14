@@ -1,14 +1,14 @@
 name: cloche-standard-gnome
 description: Standard GNOME
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: latest
+image-version: 43 #latest
 
 modules:
   - type: os-release
     properties:
       ID: cloche
       NAME: Cloche
-      PRETTY_NAME: Cloche
+      PRETTY_NAME: Cloche 43 Felt
       LOGO: system-logo-white
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
@@ -71,7 +71,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false
         scope: system
         install:
           - com.mattjakeman.ExtensionManager

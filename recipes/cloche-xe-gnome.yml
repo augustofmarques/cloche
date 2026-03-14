@@ -1,6 +1,6 @@
 name: cloche-xe
 description: Workstation Extended
-base-image: ghcr.io/ublue-os/bazzite
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: 43 #stable #Bazzite doesn't use latest.
 
 modules:
@@ -23,6 +23,10 @@ modules:
       - btop
       - firefox
       - firefox-langpacks
+      - gnome-tweaks
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-caffeine
 
   - type: files
     files:
@@ -30,7 +34,7 @@ modules:
         destination: /
       - source: cloche-xe
         destination: /
-      - source: kde
+      - source: gnome
         destination: /
 
   - type: dnf
@@ -50,7 +54,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false
         scope: system
         install:
           - dev.zed.Zed
@@ -59,6 +63,13 @@ modules:
           - io.bassi.Amberol
           - org.localsend.localsend_app
           #- org.mozilla.firefox
+          - com.mattjakeman.ExtensionManager
+          - dev.zed.Zed
+          - io.gitlab.librewolf-community
+          - io.bassi.Amberol
+          - org.localsend.localsend_app
+          - org.gnome.Calculator
+          - org.gnome.Loupe
 
   - type: systemd
     system:
@@ -72,7 +83,7 @@ modules:
 
   - type: script
     scripts:
-      - setup-cloche-xe.sh
+      - setup-cloche-xe-gnome.sh
 
   - type: initramfs
 

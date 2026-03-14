@@ -75,7 +75,7 @@ modules:
 
   - type: script
     scripts:
-      - S
+      - setup-cloche-xe-deck-gnome.sh
 
   - type: initramfs
 

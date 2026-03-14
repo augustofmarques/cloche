@@ -1,4 +1,4 @@
-name: cloche-xe-deck
+name: cloche-xe-deck-gnome
 description: Workstation Extended Deck Edition
 base-image: ghcr.io/ublue-os/bazzite-deck-gnome
 image-version: 43 #stable

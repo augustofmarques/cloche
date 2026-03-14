@@ -1,4 +1,4 @@
-name: cloche-xe
+name: cloche-xe-gnome
 description: Workstation Extended
 base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: 43 #stable #Bazzite doesn't use latest.

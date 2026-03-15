@@ -9,6 +9,7 @@ modules:
       ID: cloche-xe-deck
       NAME: Cloche Xe Deck
       PRETTY_NAME: Cloche Xe 43 Felt
+      LOGO: system-logo-white
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx

@@ -34,6 +34,29 @@ echo "Hijacking Bazzite's Fastfetch..."
 mkdir -p /usr/share/ublue-os/bazzite/
 cp -fv /etc/fastfetch/config.jsonc /usr/share/ublue-os/bazzite/fastfetch.jsonc
 
+# --- 1. THE "ABOUT" LOGO FIX ---
+echo "Registering Cloche logo for GNOME Control Center..."
+# Create the standard hicolor icon directory
+mkdir -p /usr/share/icons/hicolor/256x256/apps/
+# Copy the Plymouth watermark as the official system logo
+cp -f /usr/share/plymouth/themes/spinner/watermark.png /usr/share/icons/hicolor/256x256/apps/cloche-logo.png
+cp -f /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/cloche-logo.png
+# Refresh the icon cache so GNOME finds it instantly
+gtk-update-icon-cache /usr/share/icons/hicolor || true
+
+# --- 2. THE GDM ACCENT COLOR FIX (Bazzite Exorcism) ---
+echo "Neutralizing Bazzite GDM accent colors..."
+# Nuke any Bazzite specific GDM overrides
+rm -f /etc/dconf/db/gdm.d/*bazzite*
+
+# Create a clean Cloche override for the login screen
+mkdir -p /etc/dconf/db/gdm.d
+cat << 'EOF' > /etc/dconf/db/gdm.d/99-cloche-gdm
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+accent-color='blue'
+EOF
+
 # --- GNOME DATABASE COMPILATION ---
 echo "Nuking upstream skel dconf (The Skel Trap)..."
 rm -rf /etc/skel/.config/dconf

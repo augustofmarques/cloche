@@ -28,10 +28,6 @@ modules:
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-caffeine
-    remove:
-      - bazzite-gnome-theme
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-dash-to-dock
 
   - type: files
     files:

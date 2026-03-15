@@ -41,6 +41,17 @@ cp -f /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/cloche
 # Refresh the icon cache so GNOME finds it instantly
 gtk-update-icon-cache /usr/share/icons/hicolor || true
 
+# --- THE "ABOUT" LOGO HARDCODE FIX ---
+echo "Hijacking hardcoded Fedora/Bazzite About logos..."
+
+# Delete the hardcoded Fedora logos
+rm -f /usr/share/pixmaps/fedora_logo_med.png
+rm -f /usr/share/pixmaps/fedora_whitelogo_med.png
+
+# Symlink Cloche logo to the hardcoded paths
+ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/fedora_logo_med.png
+ln -sf /usr/share/plymouth/themes/spinner/watermark.png /usr/share/pixmaps/fedora_whitelogo_med.png
+
 # --- 2. THE GDM ACCENT COLOR FIX (Bazzite Exorcism) ---
 echo "Neutralizing Bazzite GDM accent colors..."
 # Nuke any Bazzite specific GDM overrides

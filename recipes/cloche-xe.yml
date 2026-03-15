@@ -8,7 +8,7 @@ modules:
     properties:
       ID: cloche-xe
       NAME: Cloche Xe
-      PRETTY_NAME: Cloche Xe 43 Felt
+      PRETTY_NAME: Cloche Xe 43 (Felt)
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx

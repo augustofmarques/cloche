@@ -50,9 +50,10 @@ sources=[('xkb', 'br+thinkpad')]
 clock-format='24h'
 clock-show-seconds=false
 clock-show-weekday=false
-color-scheme='prefer-dark'
+#color-scheme='prefer-dark'
 enable-hot-corners=false
 show-battery-percentage=false
+accent-color='blue'
 
 [org/gnome/desktop/notifications]
 application-children=['org-gnome-software', 'org-gnome-ptyxis', 'gnome-power-panel', 'gnome-about-panel', 'org-mozilla-firefox', 'io-github-pol-rivero-github-desktop-plus', 'dev-zed-zed']

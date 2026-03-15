@@ -8,7 +8,7 @@ modules:
     properties:
       ID: cloche-xe-deck
       NAME: Cloche Xe Deck
-      PRETTY_NAME: Cloche Xe 43 Felt
+      PRETTY_NAME: Cloche Xe 43 (Felt)
       LOGO: system-logo-white
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
@@ -28,6 +28,10 @@ modules:
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-caffeine
+    remove:
+      - bazzite-gnome-theme
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-dash-to-dock
 
   - type: files
     files:

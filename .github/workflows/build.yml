@@ -15,6 +15,7 @@ on:
   pull_request:
     branches:
       - main
+      - beta
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
       - "docs/**"

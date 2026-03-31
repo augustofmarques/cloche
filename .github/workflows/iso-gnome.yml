@@ -1,0 +1,53 @@
+name: Build ISO (JasonN3)
+
+on:
+  workflow_dispatch:
+    
+
+jobs:
+  build-iso:
+    name: Build ISO
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    
+    steps:
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@v9
+
+      - name: Define image tag
+        id: define_tag
+        
+        run: |
+          if [ "${{ github.ref_name }}" == "main" ]; then
+            echo "TAG=latest" >> $GITHUB_ENV
+          else
+            echo "TAG=${{ github.ref_name }}" >> $GITHUB_ENV
+          fi
+
+      - name: Build ISO
+        id: build
+        uses: jasonn3/build-container-installer@main
+        with:
+          arch: x86_64
+          image_repo: ghcr.io/augustofmarques
+          image_name: cloche-standard-gnome
+          image_tag: ${{ env.TAG }}
+          version: 43
+          variant: Silverblue
+          
+          web_ui: false
+          iso_name: cloche-${{ env.TAG }}.iso
+
+      - name: Upload ISO as artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.iso_name }}
+          path: |
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0

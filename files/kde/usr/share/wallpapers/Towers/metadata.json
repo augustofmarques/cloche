@@ -1,0 +1,12 @@
+{
+  "KPlugin": {
+    "Id": "Towers",
+    "Name": "Towers",
+    "Authors": [
+      {
+        "Name": "Wolframium/Augusto Marques"
+      }
+    ],
+    "License": "GPLv3"
+  }
+}

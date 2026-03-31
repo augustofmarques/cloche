@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Cloche Templates Setup
+# xdg-user-dit TEMPLATES puts the correct name according to the users selected language.
+Exec=sh -c 'cp -n /usr/share/cloche-templates/* "$(xdg-user-dir TEMPLATES)"/ 2>/dev/null || true'
+NoDisplay=true
+X-GNOME-Autostart-Phase=Application

@@ -1,14 +1,15 @@
 name: cloche-standard
 description: Standard
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 43 #latest
+image-version: beta #latest
 
 modules:
   - type: os-release
     properties:
       ID: cloche
       NAME: Cloche
-      PRETTY_NAME: Cloche 43 (Felt)
+      PRETTY_NAME: Cloche Entropy
+      #VERSION_CODENAME: Entropy
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx

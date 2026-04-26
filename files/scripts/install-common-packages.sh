@@ -8,4 +8,4 @@ rpm-ostree install -y \
     zsh \
     btop \
     tailscale \
-    gnome-boxes \
+    gnome-boxes 

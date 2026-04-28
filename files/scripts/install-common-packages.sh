@@ -7,5 +7,4 @@ rpm-ostree install -y \
     distrobox \
     zsh \
     btop \
-    tailscale \
-    gnome-boxes 
+    tailscale

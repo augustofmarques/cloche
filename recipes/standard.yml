@@ -1,7 +1,7 @@
 name: cloche-standard
 description: Standard
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 44 #latest
+image-version: 43 #latest
 
 modules:
   - type: os-release
@@ -71,7 +71,7 @@ modules:
         scope: system
         install:
           - com.vscodium.codium
-          #- io.gitlab.librewolf-community
+          - io.gitlab.librewolf-community
           - org.kde.ark
           - it.mijorus.gearlever
           #- io.github.kolunmi.Bazaar

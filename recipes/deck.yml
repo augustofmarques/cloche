@@ -8,7 +8,7 @@ modules:
     properties:
       ID: cloche-xe-deck
       NAME: Cloche Xe Deck
-      PRETTY_NAME: Cloche Xe 44 (Cairo)
+      PRETTY_NAME: Cloche Xe 43 (Felt)
       HOME_URL: https://github.com/augustofmarques/gnx
       BUG_REPORT_URL: https://github.com/augustofmarques/gnx/issues
       SUPPORT_URL: https://github.com/augustofmarques/gnx
